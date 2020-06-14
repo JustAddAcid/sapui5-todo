@@ -1,0 +1,23 @@
+<mvc:View controllerName="todoTodo.controller.index" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<Input value="{viewState>/input}" submit="appendTodo"/>
+					<List items="{viewState>/todos}">
+						<items>
+							<CustomListItem>
+								<HBox>
+									<CheckBox selected="{viewState>checked}"/>
+									<Input width="500px" value="{viewState>text}"/>
+									<Button text="X" press="deleteTodo" data:id="{viewState>id}"/>
+								</HBox>
+							</CustomListItem>
+						</items>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
